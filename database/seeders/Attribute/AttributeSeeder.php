@@ -15,7 +15,7 @@ class AttributeSeeder extends Seeder
      */
     public function run()
     {
-        $str = "size(s/m/l),color,size(xl/xs),design,weight,size(30/32/34)";
+        $str = "size(s/m/l),color,size(xl/xs),size(30/32/34)";
         $array = explode(",",$str);
         foreach($array as $row){
             Attribute::create([

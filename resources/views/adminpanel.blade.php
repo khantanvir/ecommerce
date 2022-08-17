@@ -534,8 +534,18 @@
 					$(this).parents(".input-wrapper").remove();
 					cnt--;
 				});
+
+				
 			});
 			
+			</script>
+			<script type="text/javascript">
+				let addbutton = document.getElementById("addAttributeButton");
+				addbutton.addEventListener("click", function() {
+				let attributes_boxes = document.getElementById("select-wrapper");
+				let clone = attributes_boxes.firstElementChild.cloneNode(true);
+				attributes_boxes.appendChild(clone);
+				});
 			</script>
 </body>
 </html>
