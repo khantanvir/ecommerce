@@ -535,6 +535,12 @@
 					cnt--;
 				});
 
+				$(".select-wrapper").on("click",".remove-attribute-element", function(e){
+					e.preventDefault();
+					$(this).parents(".element-wrapper").remove();
+					cnt--;
+				});
+
 				
 			});
 			

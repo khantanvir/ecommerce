@@ -71,7 +71,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <br><span class="input-group-btn"><button type="button" class="btn btn-danger remove-textbox"><i class="glyphicon glyphicon-minus"></i>-</button></span>
+                                            <br><span class="input-group-btn"><button type="button" class="btn btn-danger remove-attribute-element"><i class="glyphicon glyphicon-minus"></i>-</button></span>
                                         </div>
                                     </div>
                                 </div><br>
