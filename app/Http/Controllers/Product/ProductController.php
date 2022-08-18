@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers\Product;
 
+use App\Helper\Service;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
 use App\Models\Attributes\Attribute;
 use App\Models\Category\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    use Service;
     public function index(){
 
     }
@@ -25,5 +28,9 @@ class ProductController extends Controller
         $data['products'] = true;
         $data['all_product'] = true;
         return view('product/all',$data);
+    }
+    //store product 
+    public function store(ProductRequest $request){
+        dd($request->all());
     }
 }

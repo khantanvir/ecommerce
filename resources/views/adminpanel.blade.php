@@ -535,23 +535,54 @@
 					cnt--;
 				});
 
-				$(".select-wrapper").on("click",".remove-attribute-element", function(e){
-					e.preventDefault();
-					$(this).parents(".element-wrapper").remove();
-					cnt--;
-				});
+				
 
 				
 			});
 			
 			</script>
 			<script type="text/javascript">
+				var maxele = 15;
+				var count = 1;
 				let addbutton = document.getElementById("addAttributeButton");
 				addbutton.addEventListener("click", function() {
 				let attributes_boxes = document.getElementById("select-wrapper");
 				let clone = attributes_boxes.firstElementChild.cloneNode(true);
-				attributes_boxes.appendChild(clone);
+				if(count < maxele){
+					count++;
+					attributes_boxes.appendChild(clone);
+				}
+				
+				});
+				$("#select-wrapper").on("click",".remove-attribute-element", function(e){
+					e.preventDefault();
+					if(count > 1){
+						$(this).parents("#element-wrapper").remove();
+						count--;
+					}
+					
 				});
 			</script>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					var max = 15;
+					var cnt = 1;
+					$(".add-textbox-img").on("click", function(e){
+						e.preventDefault();
+						if(cnt < max){
+							cnt++;
+							$(".textbox-wrapper-img").append('<div class="input-wrapper-img"><div class="input-group"><input type="file" name="more_images[]" class="form-file-input form-control" /><span class="input-group-btn"><button type="button" class="btn btn-danger remove-textbox-img"><i class="glyphicon glyphicon-minus"></i>-</button></span></div><br></div>');
+						}
+					});
+				   
+					$(".textbox-wrapper-img").on("click",".remove-textbox-img", function(e){
+						e.preventDefault();
+						$(this).parents(".input-wrapper-img").remove();
+						cnt--;
+					});
+					
+				});
+				
+				</script>
 </body>
 </html>

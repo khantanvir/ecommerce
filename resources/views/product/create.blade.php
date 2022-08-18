@@ -8,7 +8,8 @@
                     <h4 class="card-title">Create Product</h4>
                 </div>
                 <div>
-                    <form method="post" action="" enctype="multipart/form-data">
+                    <form method="post" action="{{ URL::to('store-product') }}" enctype="multipart/form-data">
+                        @csrf
                         <div class="card-body">
                             <div class="basic-form">
                                 <h4 class="card-title">Title</h4>
@@ -31,16 +32,16 @@
                                     </span>
                                     <div id="select-wrapper">
                                         <div id="element-wrapper" class="row">
-                                            @foreach ($all_attribute as $attributes)
+                                            @foreach ($all_attribute as $key=>$attributes)
                                             <div class="mb-3 col-2">
                                                 <div class="align-items-center">
                                                     <div class="col-auto my-1">
                                                         <label class="me-sm-2">{{ $attributes->name }}</label>
                                                         <input type="hidden" name="main_attribute_id[]" value="{{ $attributes->id }}">
-                                                        <select name="attribute_value_name[]" class="me-sm-2 default-select form-control wide" id="inlineFormCustomSelect">
+                                                        <select name="attribute_value_name{{ $key }}[]" class="me-sm-2 default-select form-control wide" id="inlineFormCustomSelect">
                                                             <option selected="">Choose...</option>
                                                             @foreach ($attributes->attribute_value as $attr_value)
-                                                                <option value="{{ $attr_value->id }}">{{ $attr_value->name }}</option>
+                                                                <option value="{{ $attr_value->name }}">{{ $attr_value->name }}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>
@@ -78,12 +79,35 @@
                                 <h4 class="card-title">Description</h4>
                                 <div class="mb-3">
                                     <div class="card-body custom-ekeditor">
-                                        <textarea id="ckeditor" name="short_description" class="form-control"></textarea>
+                                        <textarea id="ckeditor" name="description" class="form-control"></textarea>
                                     </div>
-                                    @if ($errors->has('short_description'))
-                                        <span class="text-danger">{{ $errors->first('short_description') }}</span>
+                                    @if ($errors->has('description'))
+                                        <span class="text-danger">{{ $errors->first('description') }}</span>
                                     @endif
                                 </div><br>
+                                <h4 class="card-title">Main Image</h4>
+                                <div class="input-group">
+                                    <div class="form-file">
+                                        <input type="file" name="main_image" class="form-file-input form-control">
+                                    </div>
+                                    @if ($errors->has('main_image'))
+                                        <span class="text-danger">{{ $errors->first('main_image') }}</span>
+                                    @endif
+                                </div><br>
+                                <div class="mb-3">
+                                    <div class="textbox-wrapper-img">
+                                        <div class="input-wrapper-img">
+                                            <h4 class="card-title">More Images</h4>
+                                            <div class="input-group">
+                                                <input type="file" name="more_images[]" class="form-file-input form-control" />
+                                                <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-success add-textbox-img"><i class="glyphicon glyphicon-plus"></i>+</button>
+                                                </span>
+                                            </div><br>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Add</button>
                             </div>
                         </div>
                     </form>
