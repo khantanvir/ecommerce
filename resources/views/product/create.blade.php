@@ -38,7 +38,7 @@
                                                     <div class="col-auto my-1">
                                                         <label class="me-sm-2">{{ $attributes->name }}</label>
                                                         <input type="hidden" name="main_attribute_id[]" value="{{ $attributes->id }}">
-                                                        <select name="attribute_value_name{{ $key }}[]" class="me-sm-2 default-select form-control wide" id="inlineFormCustomSelect">
+                                                        <select name="attribute_value_name[]" class="me-sm-2 default-select form-control wide" id="inlineFormCustomSelect">
                                                             <option selected="">Choose...</option>
                                                             @foreach ($attributes->attribute_value as $attr_value)
                                                                 <option value="{{ $attr_value->name }}">{{ $attr_value->name }}</option>
