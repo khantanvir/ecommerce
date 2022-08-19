@@ -14,7 +14,7 @@
                             <div class="basic-form">
                                 <h4 class="card-title">Title</h4>
                                 <div class="mb-3">
-                                    <input type="text" name="title" value="{{ (!empty($category->title))?$category->title:old('title') }}" class="form-control input-default ">
+                                    <input type="text" name="title" value="{{ old('title') }}" class="form-control input-default ">
                                     @if ($errors->has('title'))
                                         <span class="text-danger">{{ $errors->first('title') }}</span>
                                     @endif
@@ -36,6 +36,18 @@
                                     </select>
                                     @if ($errors->has('category_id'))
                                         <span class="text-danger">{{ $errors->first('category_id') }}</span>
+                                    @endif
+                                </div><br>
+                                <div class="mb-3">
+                                    <input type="text" name="stock_price" value="{{ old('stock_price') }}" class="form-control input-default ">
+                                    @if ($errors->has('stock_price'))
+                                        <span class="text-danger">{{ $errors->first('stock_price') }}</span>
+                                    @endif
+                                </div><br>
+                                <div class="mb-3">
+                                    <input type="text" name="selling_price" value="{{ old('selling_price') }}" class="form-control input-default ">
+                                    @if ($errors->has('stock_price'))
+                                        <span class="text-danger">{{ $errors->first('selling_price') }}</span>
                                     @endif
                                 </div><br>
                                 <div id="addR">
@@ -85,22 +97,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="mb-3 col-2">
-                                                <div class="align-items-center">
-                                                    <div class="col-auto my-1">
-                                                        <label class="me-sm-2">Stock Price</label>
-                                                        <input type="text" name="stock_price[]" value="" class="form-control input-default ">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="mb-3 col-2">
-                                                <div class="align-items-center">
-                                                    <div class="col-auto my-1">
-                                                        <label class="me-sm-2">Selling Price</label>
-                                                        <input type="text" name="selling_price[]" value="" class="form-control input-default ">
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
                                             <br><span class="input-group-btn"><button type="button" class="btn btn-danger remove-attribute-element"><i class="glyphicon glyphicon-minus"></i>-</button></span>
                                         </div>
                                     </div>

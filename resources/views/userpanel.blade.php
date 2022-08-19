@@ -3,28 +3,27 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Obaju : e-commerce template</title>
+    <title>{{ (!empty($page_title))?$page_title:'' }}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ URL::to('public/frontend/vendor/bootstrap/css/bootstrap.min.css' ) }}">
     <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ URL::to('public/frontend/vendor/font-awesome/css/font-awesome.min.css' ) }}">
     <!-- Google fonts - Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700">
     <!-- owl carousel-->
-    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css">
-    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css">
+    <link rel="stylesheet" href="{{ URL::to('public/frontend/vendor/owl.carousel/assets/owl.carousel.css' ) }}">
+    <link rel="stylesheet" href="{{ URL::to('public/frontend/vendor/owl.carousel/assets/owl.theme.default.css' ) }}">
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="{{ URL::to('public/frontend/css/style.default.css' ) }}" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="{{ URL::to('public/frontend/css/custom.css' ) }}">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="favicon.png">
-    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <link rel="shortcut icon" href="{{ URL::to('public/frontend/favicon.png' ) }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+   
   </head>
   <body>
     <!-- navbar-->
@@ -34,19 +33,6 @@
       _________________________________________________________
       -->
       <div id="top">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 offer mb-3 mb-lg-0"><a href="#" class="btn btn-success btn-sm">Offer of the day</a><a href="#" class="ml-1">Get flat 35% off on orders over $50!</a></div>
-            <div class="col-lg-6 text-center text-lg-right">
-              <ul class="menu list-inline mb-0">
-                <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#login-modal">Login</a></li>
-                <li class="list-inline-item"><a href="register.html">Register</a></li>
-                <li class="list-inline-item"><a href="contact.html">Contact</a></li>
-                <li class="list-inline-item"><a href="#">Recently viewed</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
         <div id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true" class="modal fade">
           <div class="modal-dialog modal-sm">
             <div class="modal-content">
@@ -77,167 +63,34 @@
         
       </div>
       <nav class="navbar navbar-expand-lg">
-        <div class="container"><a href="index.html" class="navbar-brand home"><img src="img/logo.png" alt="Obaju logo" class="d-none d-md-inline-block"><img src="img/logo-small.png" alt="Obaju logo" class="d-inline-block d-md-none"><span class="sr-only">Obaju - go to homepage</span></a>
+        <div class="container"><a href="index.html" class="navbar-brand home"><img src="{{ URL::to('public/frontend/img/logo.png' ) }}" alt="Obaju logo" class="d-none d-md-inline-block"><img src="{{ URL::to('public/frontend/img/logo-small.png' ) }}" alt="Obaju logo" class="d-inline-block d-md-none"><span class="sr-only">Obaju - go to homepage</span></a>
           <div class="navbar-buttons">
             <button type="button" data-toggle="collapse" data-target="#navigation" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i></button>
             <button type="button" data-toggle="collapse" data-target="#search" class="btn btn-outline-secondary navbar-toggler"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></button><a href="basket.html" class="btn btn-outline-secondary navbar-toggler"><i class="fa fa-shopping-cart"></i></a>
           </div>
           <div id="navigation" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-              <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Men<b class="caret"></b></a>
-                <ul class="dropdown-menu megamenu">
-                  <li>
-                    <div class="row">
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Clothing</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">T-shirts</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Shirts</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Pants</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Accessories</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Shoes</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Sandals</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Casual</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Accessories</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Sandals</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Casual</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Casual</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Featured</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Sandals</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
-                        </ul>
-                        <h5>Looks and trends</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Sandals</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Ladies<b class="caret"></b></a>
-                <ul class="dropdown-menu megamenu">
-                  <li>
-                    <div class="row">
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Clothing</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">T-shirts</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Shirts</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Pants</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Accessories</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Shoes</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Sandals</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Casual</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Accessories</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Sandals</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Casual</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Casual</a></li>
-                        </ul>
-                        <h5>Looks and trends</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="category.html" class="nav-link">Trainers</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Sandals</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Hiking shoes</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <div class="banner"><a href="#"><img src="img/banner.jpg" alt="" class="img img-fluid"></a></div>
-                        <div class="banner"><a href="#"><img src="img/banner2.jpg" alt="" class="img img-fluid"></a></div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown menu-large"><a href="#" data-toggle="dropdown" data-hover="dropdown" data-delay="200" class="dropdown-toggle nav-link">Template<b class="caret"></b></a>
-                <ul class="dropdown-menu megamenu">
-                  <li>
-                    <div class="row">
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Shop</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="index.html" class="nav-link">Homepage</a></li>
-                          <li class="nav-item"><a href="category.html" class="nav-link">Category - sidebar left</a></li>
-                          <li class="nav-item"><a href="category-right.html" class="nav-link">Category - sidebar right</a></li>
-                          <li class="nav-item"><a href="category-full.html" class="nav-link">Category - full width</a></li>
-                          <li class="nav-item"><a href="detail.html" class="nav-link">Product detail</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>User</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="register.html" class="nav-link">Register / login</a></li>
-                          <li class="nav-item"><a href="customer-orders.html" class="nav-link">Orders history</a></li>
-                          <li class="nav-item"><a href="customer-order.html" class="nav-link">Order history detail</a></li>
-                          <li class="nav-item"><a href="customer-wishlist.html" class="nav-link">Wishlist</a></li>
-                          <li class="nav-item"><a href="customer-account.html" class="nav-link">Customer account / change password</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Order process</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="basket.html" class="nav-link">Shopping cart</a></li>
-                          <li class="nav-item"><a href="checkout1.html" class="nav-link">Checkout - step 1</a></li>
-                          <li class="nav-item"><a href="checkout2.html" class="nav-link">Checkout - step 2</a></li>
-                          <li class="nav-item"><a href="checkout3.html" class="nav-link">Checkout - step 3</a></li>
-                          <li class="nav-item"><a href="checkout4.html" class="nav-link">Checkout - step 4</a></li>
-                        </ul>
-                      </div>
-                      <div class="col-md-6 col-lg-3">
-                        <h5>Pages and blog</h5>
-                        <ul class="list-unstyled mb-3">
-                          <li class="nav-item"><a href="blog.html" class="nav-link">Blog listing</a></li>
-                          <li class="nav-item"><a href="post.html" class="nav-link">Blog Post</a></li>
-                          <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
-                          <li class="nav-item"><a href="text.html" class="nav-link">Text page</a></li>
-                          <li class="nav-item"><a href="text-right.html" class="nav-link">Text page - right sidebar</a></li>
-                          <li class="nav-item"><a href="404.html" class="nav-link">404 page</a></li>
-                          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
+              <li class="nav-item"><a href="{{ URL::to('/') }}" class="nav-link active">Home</a></li>
+              <li class="nav-item"><a href="{{ URL::to('/mens') }}" class="nav-link active">Men</a></li>
+              <li class="nav-item"><a href="{{ URL::to('/womens') }}" class="nav-link active">Women</a></li>
+              @if(Auth::check())
+              <li class="nav-item"><a href="{{ URL::to('signout') }}" class="nav-link active">Logout</a></li>
+              @else
+              <li class="nav-item"><a href="{{ URL::to('login') }}" class="nav-link active">Login</a></li>
+              @endif
+              
+              
             </ul>
             <div class="navbar-buttons d-flex justify-content-end">
               <!-- /.nav-collapse-->
               <div id="search-not-mobile" class="navbar-collapse collapse"></div><a data-toggle="collapse" href="#search" class="btn navbar-btn btn-primary d-none d-lg-inline-block"><span class="sr-only">Toggle search</span><i class="fa fa-search"></i></a>
-              <div id="basket-overview" class="navbar-collapse collapse d-none d-lg-block"><a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span>3 items in cart</span></a></div>
+              <div id="basket-overview" class="navbar-collapse collapse d-none d-lg-block"><a href="{{ URL::to('view-cart') }}" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i></span>
+                @if(!empty(Session::get('cart')))
+                <span id="cart_count">{{ count(Session::get('cart')) }}</span><span> items in cart</span>
+                @else
+                <span id="cart_count">0</span><span> items in cart</span>
+                @endif
+              </a></div>
             </div>
           </div>
         </div>
@@ -342,11 +195,133 @@
     </div>
     <!-- *** COPYRIGHT END ***-->
     <!-- JavaScript files-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
-    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-    <script src="vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js"></script>
-    <script src="js/front.js"></script>
+    <script src="{{ URL::to('public/frontend/vendor/jquery/jquery.min.js' ) }}"></script>
+    <script src="{{ URL::to('public/frontend/vendor/bootstrap/js/bootstrap.bundle.min.js' ) }}"></script>
+    <script src="{{ URL::to('public/frontend/vendor/jquery.cookie/jquery.cookie.js' ) }}"> </script>
+    <script src="{{ URL::to('public/frontend/vendor/owl.carousel/owl.carousel.min.js' ) }}"></script>
+    <script src="{{ URL::to('public/frontend/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.js' ) }}"></script>
+    <script src="{{ URL::to('public/frontend/js/front.js' ) }}"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <script>
+		@if(Session::has('success'))
+		toastr.options =
+		{
+			"closeButton" : true,
+			"progressBar" : true,
+			"timeOut": "10000",
+			"extendedTimeOut": "1000",
+			"showEasing": "swing",
+			"hideEasing": "linear",
+		}
+				toastr.success("{{ session('success') }}");
+		@endif
+	  
+		@if(Session::has('error'))
+		toastr.options =
+		{
+			"closeButton" : true,
+			"progressBar" : true,
+			"timeOut": "10000",
+			"positionClass": "toast-top-right",
+			"extendedTimeOut": "1000",
+			"showEasing": "swing",
+			"hideEasing": "linear",
+		}
+				toastr.error("{{ session('error') }}");
+		@endif
+	  
+		@if(Session::has('info'))
+		toastr.options =
+		{
+			"closeButton" : true,
+			"progressBar" : true,
+			"timeOut": "10000",
+			"extendedTimeOut": "1000",
+			"showEasing": "swing",
+			"hideEasing": "linear",
+		}
+				toastr.info("{{ session('info') }}");
+		@endif
+	  
+		@if(Session::has('warning'))
+		toastr.options =
+		{
+			"closeButton" : true,
+			"progressBar" : true,
+			"timeOut": "10000",
+			"extendedTimeOut": "1000",
+			"showEasing": "swing",
+			"hideEasing": "linear",
+		}
+				toastr.warning("{{ session('warning') }}");
+		@endif
+	  </script>
+	  <script type="text/javascript">
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			}
+		});
+		</script>
+    <script type="text/javascript">
+      function addToCart(){
+        var quantity = $('#quantity').val();
+        var product_url = $('#product_url').val();
+        if(quantity !=="" && product_url !==""){
+            $.ajax({
+                url: '{{ URL::to('add-to-cart') }}',
+                data: { 'quantity':quantity,'product_url':product_url },
+                type: 'POST',
+                dataType: 'html',
+                success:function (result) {
+                    data = JSON.parse(result);
+                    if(data['result']['key'] == "200"){
+                      console.log(result);
+                        $('#cart_count').html(data['result']['count']);
+                    }
+                    if(data['result']['key'] == "101"){
+                        alert(data['result']['val']);
+                    }
+                    if(data['result']['key'] == "102"){
+                        alert(data['result']['val']);
+                    }
+                },
+                error:function(exception){alert('Exeption:'+JSON.stringify(exception));}
+            });
+        }else{
+            return false;
+        }
+    }
+
+    function addToCartFromList(x) {
+        var quantity = 1;
+        var product_url = $('#product_url'+x).val();
+        if(quantity !=="" && product_url !==""){
+            $.ajax({
+                url: '{{ URL::to('add-to-cart') }}',
+                data: { 'quantity':quantity,'product_url':product_url },
+                type: 'POST',
+                dataType: 'html',
+                success:function (result) {
+                    data = JSON.parse(result);
+                    if(data['result']['key'] == "200"){
+                       $('#cart_count').html(data['result']['count']);
+                    }
+                    if(data['result']['key'] == "101"){
+                        alert(data['result']['val']);
+                    }
+                    if(data['result']['key'] == "102"){
+                        alert(data['result']['val']);
+                    }
+                },
+                error:function(exception){alert('Exeption:'+JSON.stringify(exception));}
+            });
+        }else{
+            return false;
+        }
+    }
+    </script>
   </body>
 </html>

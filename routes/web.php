@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Category\CategoryController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ArtisanController;
 
 
-Route::get('/', [App\Http\Controllers\DashboardController::class, 'index']);
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
 
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'admin_login']);
 Route::get('/forgot-password', [App\Http\Controllers\LoginController::class, 'forgot_password']);
@@ -46,3 +48,24 @@ Route::controller(CategoryController::class)->group(function() {
     Route::get('/get-attribute-for-edit/{id?}','get_attribute_for_edit');
     Route::post('/get-attribute-for-edit-post','get_attribute_for_edit_post');
 });
+
+Route::controller(HomeController::class)->group(function() {
+    Route::get('/','index');
+    Route::get('/mens','mens');
+    Route::get('/womens','womens');
+    Route::get('/details/{id?}','details');
+    Route::post('add-to-cart','add_to_cart');
+    Route::get('/view-cart','view_cart');
+    Route::get('/remove-from-cart-page/{id?}','remove_from_cart_page');
+});
+
+Route::controller(ArtisanController::class)->group(function() {
+    Route::get('database-migrate', 'migrate');
+    Route::get('roll-seeder', 'roll_seeder');
+    Route::get('admin-seeder', 'admin_seeder');
+
+    Route::get('cache-clear', 'cache_clear');
+    Route::get('route-clear', 'route_clear');
+    Route::get('config-clear', 'config_clear');
+});
+

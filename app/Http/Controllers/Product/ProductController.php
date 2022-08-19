@@ -53,6 +53,8 @@ class ProductController extends Controller
         $product->category_id = $request->input('category_id');
         $product->status = 0;
         $product->is_deleted = 0;
+        $product->stock_price = $request->input('stock_price');
+        $product->selling_price = $request->input('selling_price');
         //main image upload
         $image = $request->file('main_image');
         if($request->hasFile('main_image')){
@@ -61,7 +63,7 @@ class ProductController extends Controller
             $filename = $image->getClientOriginalName();
             $filename = rand(1000,100000).'.'.$ext;
             $image_resize = Image::make($image->getRealPath());
-            $image_resize->resize(200,200);
+            $image_resize->resize(450,600);
             $image_resize->save(public_path('main/image/' .$filename));
             $product->image = $filename;
         }
@@ -74,7 +76,7 @@ class ProductController extends Controller
                 $filename = $more_image->getClientOriginalName();
                 $filename = rand(1000,100000).'.'.$ext;
                 $image_resize = Image::make($more_image->getRealPath());
-                $image_resize->resize(200,200);
+                $image_resize->resize(450,678);
                 $image_resize->save(public_path('main/moreimages/' .$filename));
                 if($key==0){
                     $daaimage .= $filename;

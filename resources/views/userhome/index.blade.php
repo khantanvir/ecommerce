@@ -6,10 +6,10 @@
         <div class="row">
           <div class="col-md-12">
             <div id="main-slider" class="owl-carousel owl-theme">
-              <div class="item"><img src="img/main-slider1.jpg" alt="" class="img-fluid"></div>
-              <div class="item"><img src="img/main-slider2.jpg" alt="" class="img-fluid"></div>
-              <div class="item"><img src="img/main-slider3.jpg" alt="" class="img-fluid"></div>
-              <div class="item"><img src="img/main-slider4.jpg" alt="" class="img-fluid"></div>
+              <div class="item"><img src="{{ URL::to('public/frontend/img/main-slider1.jpg' ) }}" alt="" class="img-fluid"></div>
+              <div class="item"><img src="{{ URL::to('public/frontend/img/main-slider2.jpg' ) }}" alt="" class="img-fluid"></div>
+              <div class="item"><img src="{{ URL::to('public/frontend/img/main-slider3.jpg' ) }}" alt="" class="img-fluid"></div>
+              <div class="item"><img src="{{ URL::to('public/frontend/img/main-slider4.jpg' ) }}" alt="" class="img-fluid"></div>
             </div>
             <!-- /#main-slider-->
           </div>
@@ -70,10 +70,10 @@
               <div class="product">
                 <div class="flip-container">
                   <div class="flipper">
-                    <div class="front"><a href="detail.html"><img src="img/product1.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="back"><a href="detail.html"><img src="img/product1_2.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="front"><a href="detail.html"><img src="{{ URL::to('public/frontend/img/product1.jpg' ) }}" alt="" class="img-fluid"></a></div>
+                    <div class="back"><a href="detail.html"><img src="{{ URL::to('public/frontend/img/product1_2.jpg' ) }}" alt="" class="img-fluid"></a></div>
                   </div>
-                </div><a href="detail.html" class="invisible"><img src="img/product1.jpg" alt="" class="img-fluid"></a>
+                </div><a href="detail.html" class="invisible"><img src="{{ URL::to('public/frontend/img/product1.jpg' ) }}" alt="" class="img-fluid"></a>
                 <div class="text">
                   <h3><a href="detail.html">Fur coat with very but very very long name</a></h3>
                   <p class="price"> 
@@ -103,10 +103,10 @@
               <div class="product">
                 <div class="flip-container">
                   <div class="flipper">
-                    <div class="front"><a href="detail.html"><img src="img/product2.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="back"><a href="detail.html"><img src="img/product2_2.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="front"><a href="detail.html"><img src="{{ URL::to('public/frontend/img/product2.jpg' ) }}" alt="" class="img-fluid"></a></div>
+                    <div class="back"><a href="detail.html"><img src="{{ URL::to('public/frontend/img/product2_2.jpg' ) }}" alt="" class="img-fluid"></a></div>
                   </div>
-                </div><a href="detail.html" class="invisible"><img src="img/product2.jpg" alt="" class="img-fluid"></a>
+                </div><a href="detail.html" class="invisible"><img src="{{ URL::to('public/frontend/img/product2.jpg' ) }}" alt="" class="img-fluid"></a>
                 <div class="text">
                   <h3><a href="detail.html">White Blouse Armani</a></h3>
                   <p class="price"> 
@@ -136,10 +136,10 @@
               <div class="product">
                 <div class="flip-container">
                   <div class="flipper">
-                    <div class="front"><a href="detail.html"><img src="img/product3.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="back"><a href="detail.html"><img src="img/product3_2.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="front"><a href="detail.html"><img src="{{ URL::to('public/frontend/img/product3.jpg' ) }}" alt="" class="img-fluid"></a></div>
+                    <div class="back"><a href="detail.html"><img src="{{ URL::to('public/frontend/img/product3_2.jpg' ) }}" alt="" class="img-fluid"></a></div>
                   </div>
-                </div><a href="detail.html" class="invisible"><img src="img/product3.jpg" alt="" class="img-fluid"></a>
+                </div><a href="detail.html" class="invisible"><img src="{{ URL::to('public/frontend/img/product3.jpg' ) }}" alt="" class="img-fluid"></a>
                 <div class="text">
                   <h3><a href="detail.html">Black Blouse Versace</a></h3>
                   <p class="price"> 
@@ -154,10 +154,10 @@
               <div class="product">
                 <div class="flip-container">
                   <div class="flipper">
-                    <div class="front"><a href="detail.html"><img src="img/product3.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="back"><a href="detail.html"><img src="img/product3_2.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="front"><a href="detail.html"><img src="{{ URL::to('public/frontend/img/product3.jpg' ) }}" alt="" class="img-fluid"></a></div>
+                    <div class="back"><a href="detail.html"><img src="{{ URL::to('public/frontend/img/product3_2.jpg' ) }}" alt="" class="img-fluid"></a></div>
                   </div>
-                </div><a href="detail.html" class="invisible"><img src="img/product3.jpg" alt="" class="img-fluid"></a>
+                </div><a href="detail.html" class="invisible"><img src="{{ URL::to('public/frontend/img/product3.jpg' ) }}" alt="" class="img-fluid"></a>
                 <div class="text">
                   <h3><a href="detail.html">Black Blouse Versace</a></h3>
                   <p class="price"> 
@@ -172,10 +172,10 @@
               <div class="product">
                 <div class="flip-container">
                   <div class="flipper">
-                    <div class="front"><a href="detail.html"><img src="img/product2.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="back"><a href="detail.html"><img src="img/product2_2.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="front"><a href="detail.html"><img src="{{ URL::to('public/frontend/img/product2.jpg' ) }}" alt="" class="img-fluid"></a></div>
+                    <div class="back"><a href="detail.html"><img src="{{ URL::to('public/frontend/img/product2_2.jpg' ) }}" alt="" class="img-fluid"></a></div>
                   </div>
-                </div><a href="detail.html" class="invisible"><img src="img/product2.jpg" alt="" class="img-fluid"></a>
+                </div><a href="detail.html" class="invisible"><img src="{{ URL::to('public/frontend/img/product2.jpg' ) }}" alt="" class="img-fluid"></a>
                 <div class="text">
                   <h3><a href="detail.html">White Blouse Versace</a></h3>
                   <p class="price"> 
@@ -195,10 +195,10 @@
               <div class="product">
                 <div class="flip-container">
                   <div class="flipper">
-                    <div class="front"><a href="detail.html"><img src="img/product1.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="back"><a href="detail.html"><img src="img/product1_2.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="front"><a href="detail.html"><img src="{{ URL::to('public/frontend/img/product1.jpg' ) }}" alt="" class="img-fluid"></a></div>
+                    <div class="back"><a href="detail.html"><img src="{{ URL::to('public/frontend/img/product1_2.jpg' ) }}" alt="" class="img-fluid"></a></div>
                   </div>
-                </div><a href="detail.html" class="invisible"><img src="img/product1.jpg" alt="" class="img-fluid"></a>
+                </div><a href="detail.html" class="invisible"><img src="{{ URL::to('public/frontend/img/product1.jpg' ) }}" alt="" class="img-fluid"></a>
                 <div class="text">
                   <h3><a href="detail.html">Fur coat</a></h3>
                   <p class="price"> 
@@ -218,10 +218,10 @@
               <div class="product">
                 <div class="flip-container">
                   <div class="flipper">
-                    <div class="front"><a href="detail.html"><img src="img/product2.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="back"><a href="detail.html"><img src="img/product2_2.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="front"><a href="detail.html"><img src="{{ URL::to('public/frontend/img/product2.jpg' ) }}" alt="" class="img-fluid"></a></div>
+                    <div class="back"><a href="detail.html"><img src="{{ URL::to('public/frontend/img/product2_2.jpg' ) }}" alt="" class="img-fluid"></a></div>
                   </div>
-                </div><a href="detail.html" class="invisible"><img src="img/product2.jpg" alt="" class="img-fluid"></a>
+                </div><a href="detail.html" class="invisible"><img src="{{ URL::to('public/frontend/img/product2.jpg' ) }}" alt="" class="img-fluid"></a>
                 <div class="text">
                   <h3><a href="detail.html">White Blouse Armani</a></h3>
                   <p class="price"> 
@@ -251,10 +251,10 @@
               <div class="product">
                 <div class="flip-container">
                   <div class="flipper">
-                    <div class="front"><a href="detail.html"><img src="img/product3.jpg" alt="" class="img-fluid"></a></div>
-                    <div class="back"><a href="detail.html"><img src="img/product3_2.jpg" alt="" class="img-fluid"></a></div>
+                    <div class="front"><a href="detail.html"><img src="{{ URL::to('public/frontend/img/product3.jpg' ) }}" alt="" class="img-fluid"></a></div>
+                    <div class="back"><a href="detail.html"><img src="{{ URL::to('public/frontend/img/product3_2.jpg' ) }}" alt="" class="img-fluid"></a></div>
                   </div>
-                </div><a href="detail.html" class="invisible"><img src="img/product3.jpg" alt="" class="img-fluid"></a>
+                </div><a href="detail.html" class="invisible"><img src="{{ URL::to('public/frontend/img/product3.jpg' ) }}" alt="" class="img-fluid"></a>
                 <div class="text">
                   <h3><a href="detail.html">Black Blouse Versace</a></h3>
                   <p class="price"> 
@@ -282,9 +282,9 @@
             <h3>Get Inspired</h3>
             <p class="lead">Get the inspiration from our world class designers</p>
             <div id="get-inspired" class="owl-carousel owl-theme">
-              <div class="item"><a href="#"><img src="img/getinspired1.jpg" alt="Get inspired" class="img-fluid"></a></div>
-              <div class="item"><a href="#"><img src="img/getinspired2.jpg" alt="Get inspired" class="img-fluid"></a></div>
-              <div class="item"><a href="#"><img src="img/getinspired3.jpg" alt="Get inspired" class="img-fluid"></a></div>
+              <div class="item"><a href="#"><img src="{{ URL::to('public/frontend/img/getinspired1.jpg' ) }}" alt="Get inspired" class="img-fluid"></a></div>
+              <div class="item"><a href="#"><img src="{{ URL::to('public/frontend/img/getinspired2.jpg' ) }}" alt="Get inspired" class="img-fluid"></a></div>
+              <div class="item"><a href="#"><img src="{{ URL::to('public/frontend/img/getinspired3.jpg' ) }}" alt="Get inspired" class="img-fluid"></a></div>
             </div>
           </div>
         </div>
