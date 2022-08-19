@@ -26,6 +26,18 @@
                                         <span class="text-danger">{{ $errors->first('short_description') }}</span>
                                     @endif
                                 </div><br>
+                                <div class="mb-3">
+                                    <h4 class="card-title">Select Category</h4>
+                                    <select name="category_id" class="default-select form-control wide mb-3">
+                                        <option value="">Select Category</option>
+                                        @foreach($categories as $key => $row)
+                                            <option value="{{ $row->id }}">{{ $row->title }}</option>
+                                        @endforeach
+                                    </select>
+                                    @if ($errors->has('category_id'))
+                                        <span class="text-danger">{{ $errors->first('category_id') }}</span>
+                                    @endif
+                                </div><br>
                                 <div id="addR">
                                     <span class="input-group-btn">
                                         <button id="addAttributeButton" type="button" class="btn btn-success add-product-div"><i class="glyphicon glyphicon-plus"></i>+</button>
@@ -33,20 +45,37 @@
                                     <div id="select-wrapper">
                                         <div id="element-wrapper" class="row">
                                             @foreach ($all_attribute as $key=>$attributes)
-                                            <div class="mb-3 col-2">
-                                                <div class="align-items-center">
-                                                    <div class="col-auto my-1">
-                                                        <label class="me-sm-2">{{ $attributes->name }}</label>
-                                                        <input type="hidden" name="main_attribute_id[]" value="{{ $attributes->id }}">
-                                                        <select name="attribute_value_name[]" class="me-sm-2 default-select form-control wide" id="inlineFormCustomSelect">
-                                                            <option selected="">Choose...</option>
-                                                            @foreach ($attributes->attribute_value as $attr_value)
-                                                                <option value="{{ $attr_value->name }}">{{ $attr_value->name }}</option>
-                                                            @endforeach
-                                                        </select>
+                                            @if($attributes->type=='size')
+                                                <div class="mb-3 col-2">
+                                                    <div class="align-items-center">
+                                                        <div class="col-auto my-1">
+                                                            <label class="me-sm-2">{{ $attributes->name }}</label>
+                                                            <select name="attribute_size_values[]" class="me-sm-2 default-select form-control wide" id="inlineFormCustomSelect">
+                                                                <option selected="">Choose...</option>
+                                                                @foreach ($attributes->attribute_value as $attr_value)
+                                                                    <option value="{{ $attr_value->name }}">{{ $attr_value->name }}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            @elseif($attributes->type=='color')
+                                                <div class="mb-3 col-2">
+                                                    <div class="align-items-center">
+                                                        <div class="col-auto my-1">
+                                                            <label class="me-sm-2">{{ $attributes->name }}</label>
+                                                            <select name="attribute_color_values[]" class="me-sm-2 default-select form-control wide" id="inlineFormCustomSelect">
+                                                                <option selected="">Choose...</option>
+                                                                @foreach ($attributes->attribute_value as $attr_value)
+                                                                    <option value="{{ $attr_value->name }}">{{ $attr_value->name }}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @else
+                                            @endif
+                                            
                                             @endforeach
                                             <div class="mb-3 col-2">
                                                 <div class="align-items-center">
@@ -107,6 +136,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <button type="submit" class="btn btn-primary">Add</button>
                             </div>
                         </div>
